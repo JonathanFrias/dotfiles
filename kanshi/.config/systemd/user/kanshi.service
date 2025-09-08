@@ -1,0 +1,15 @@
+[Unit]
+Description=Kanshi output autoconfig
+Documentation=man:kanshi(1)
+After=graphical-session.target
+Wants=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kanshi
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target
