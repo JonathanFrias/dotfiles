@@ -1,0 +1,12 @@
+[Unit]
+Description=AutoSSH tunnel to gofrias (SOCKS proxy on port 9443)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -o "ExitOnForwardFailure yes" -D 9443 -N gofrias
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

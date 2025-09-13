@@ -6,10 +6,16 @@ profile laptop {
     output eDP-1 enable mode 2880x1920@120.00Hz position 0,0 scale 1
 }
 
-# External monitor profile for DP-3 (disable laptop when external connected)
-profile external_dp3 {
+# ViewSonic TD1655 monitor profile for DP-3 (dual monitor setup)
+profile viewsonic_td1655 {
+    output eDP-1 enable mode 2880x1920@120.00Hz position 0,0 scale 1
+    output "ViewSonic Corporation TD1655 W3U221720136" enable mode 1920x1080@60.00Hz position 2880,0 scale 1.00
+}
+
+# LG 4K monitor profile for DP-3 (disable laptop when external connected)
+profile lg_4k_dp3 {
     output eDP-1 disable
-    output DP-3 enable mode 3840x2160@60.00Hz position 0,0 scale 1.00
+    output "LG Electronics LG HDR 4K 503NTKF17589" enable mode 3840x2160@60.00Hz position 0,0 scale 1.00
 }
 
 # External monitor profile for DP-7 (disable laptop when external connected)
