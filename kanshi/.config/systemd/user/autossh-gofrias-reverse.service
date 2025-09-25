@@ -1,0 +1,12 @@
+[Unit]
+Description=AutoSSH reverse tunnel to gofrias (port 8443)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -o "ExitOnForwardFailure yes" -R 8443:localhost:8443 -N gofrias
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
